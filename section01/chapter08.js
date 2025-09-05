@@ -15,6 +15,18 @@ let userNickname = "olivejua";
 
 let displayName = userName ?? userNickname;
 
-
 // 2. typeof 연산자
 // -> 값의 타입을 문자열로 변환하는 기능을 하는 연산자
+
+let var7 = 1;
+var7 = "hello world";
+
+let t1 = typeof var7;
+console.log(t1);
+
+
+// 3. 삼항 연산자
+let var8 = 10;
+
+let res = var8 % 2 === 0 ? "짝수" : "홀수";
+
