@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+// React 에서는 함수가 Html 태그를 리턴하고 있으면 '컴포넌트' 라고 함.
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,7 +17,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>안녕 리액트!</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
