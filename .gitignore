@@ -2,15 +2,15 @@
 section03/node_modules
 
 # Logs
-section04/logs
-section04/*.log
-section04/npm-debug.log*
-section04/yarn-debug.log*
-section04/yarn-error.log*
-section04/pnpm-debug.log*
-section04/lerna-debug.log*
+**/logs
+**/*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+**/lerna-debug.log*
 
-section04/node_modules
-section04/dist
-section04/dist-ssr
-section04/*.local
+**/node_modules
+**/dist
+**/dist-ssr
+**/*.local
