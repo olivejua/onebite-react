@@ -7,12 +7,16 @@ function App() {
     const [count, onClick] = useCounter();
 
     return (
-        <>
+        <div className="App">
             <h1>Simple Counter</h1>
-            <Viewer count={count} />
-            <Controller onClick={onClick} />
-        </>
+            <section>
+                <Viewer count={count} />
+            </section>
+            <section>
+                <Controller onClick={onClick} />
+            </section>
+        </div>
     )
 }
 
-export default App
+export default App;
