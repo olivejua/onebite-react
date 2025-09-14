@@ -1,9 +1,10 @@
 import './App.css';
 
 import {useRef, useState} from 'react';
-import Header from './components/Header.jsx'
-import Editor from './components/Editor.jsx'
+import Header from './components/Header.jsx';
+import Editor from './components/Editor.jsx';
 import List from "./components/List.jsx";
+import Exam from './components/Exam.jsx';
 
 const mockData = [
     {
@@ -55,9 +56,7 @@ function App() {
 
     return (
         <div className="App">
-            <Header />
-            <Editor onCreate={onCreate} />
-            <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+            <Exam />
         </div>
     );
 }

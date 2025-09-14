@@ -1,0 +1,8 @@
+.App {
+    width: 500px;
+    margin: 0 auto;
+
+    display: flex; /* 자식 요소를 좀 더 유연하게 */
+    flex-direction: column;
+    gap: 10px;
+}
