@@ -21,20 +21,29 @@ function App() {
 
     return (
         <>
-            <Button />
-            <div>
-                <img src={getEmotionImage(1)} />
-                <img src={getEmotionImage(2)} />
-                <img src={getEmotionImage(3)} />
-                <img src={getEmotionImage(4)} />
-                <img src={getEmotionImage(5)} />
-            </div>
-            <div>
-                <Link to="/">Home</Link>
-                <Link to="/new">New</Link>
-                <Link to="/diary">Diary</Link>
-            </div>
-            <button onClick={onClickButton}>New 페이지로 이동</button>
+            <Button
+                text={"123"}
+                onClick={() => {
+                    console.log("123번 버튼 클릭!")
+                }}
+            />
+
+            <Button
+                text={"123"}
+                type={"POSITIVE"}
+                onClick={() => {
+                    console.log("123번 버튼 클릭!")
+                }}
+            />
+
+            <Button
+                text={"123"}
+                type={"NEGATIVE"}
+                onClick={() => {
+                    console.log("123번 버튼 클릭!")
+                }}
+            />
+
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/new" element={<New />} />
