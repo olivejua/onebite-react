@@ -1,6 +1,6 @@
 import './App.css';
 
-import {useRef, useReducer, createContext} from 'react';
+import {useRef, useReducer, createContext, useMemo} from 'react';
 import Header from './components/Header.jsx';
 import Editor from './components/Editor.jsx';
 import List from "./components/List.jsx";
@@ -44,7 +44,10 @@ function reducer(state, action) {
 * Context 생성은 보통은 컴포넌트 외부에 선언하게 됨.
 * 렌더링할 때마다 컨텍스트 생성로직이 실행하게 하지 않게 하기 위해
 */
-export const TodoContext = createContext();
+// export const TodoContext = createContext();
+
+export const TodoStateContext = createContext();
+export const TodoDispatchContext = createContext();
 
 function App() {
     const [todos, dispatch] = useReducer(reducer, mockData);
@@ -76,13 +79,20 @@ function App() {
         })
     }
 
+    const memoizedDispatch = useMemo(() => {
+        return {onCreate, onUpdate, onDelete};
+    }, []);
+
     return (
         <div className="App">
             <Header />
-            <TodoContext.Provider value={{ todos, onCreate, onUpdate, onDelete }}>
-                <Editor />
-                <List />
-            </TodoContext.Provider>
+            <TodoStateContext.Provider value={todos}>
+                <TodoDispatchContext.Provider value={memoizedDispatch}>
+                    <Editor />
+                    <List />
+                </TodoDispatchContext.Provider>
+            </TodoStateContext.Provider>
+
         </div>
     );
 }
